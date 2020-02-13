@@ -6,14 +6,14 @@ version = "0.1.0"
 [deps]
 LazySets = "b4f0291d-fe17-52bc-9479-3d1a343d9043"
 MathematicalSystems = "d14a8603-c872-5ed3-9ece-53e0e82e39da"
-#Reachability = "064036b5-7c26-58b5-b080-fe81ce0422d0"
+#ReachabilityAnalysis = ""
 Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
 
 [compat]
 julia = "1"
-LazySets = "^1.24"
-MathematicalSystems = "^0.8"
-#Reachability = "^0.4, ^0.5"
+LazySets = "1.27"
+MathematicalSystems = "0.10"
+#ReachabilityAnalysis = "0.1"
 #Reexport = ""
 
 [extras]
