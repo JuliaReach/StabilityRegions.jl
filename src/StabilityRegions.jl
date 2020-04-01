@@ -5,7 +5,6 @@ using Reexport, Parameters
 
 abstract type AbstractAlgorithm end
 
-include("utils.jl")
 include("static.jl")
 
 export Static2D,
