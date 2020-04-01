@@ -1,25 +1,5 @@
 using ReachabilityAnalysis: AbstractContinuousPost
 
-@inline function _issubset_old(X, Y)
-    local Z
-    try
-        Z = X ⊆ Y
-    catch
-        try
-            Xpoly = convert(HPolytope, X)
-            Ypoly = convert(HPolytope, Y)
-            Z = Xpoly ⊆ Ypoly
-        catch
-            error("no esta implementado")
-        end
-    end
-    return Z
-end
-
-function _issubset(X::AbstractHyperrectangle, Y::AbstractHyperrectangle)
-    return LazySets.issubset(X, Y)
-end
-
 """
     stability_region(S, xs, G; T=10.0, ϵ=1e-3, λ=50, itermax=100, hx=20, hy=20)
 
@@ -51,12 +31,6 @@ This preliminary code works for the two-dimensional examples only..
     hy::Int=20
     cpost::AbstractContinuousPost=TMJets()
     #ST::Hyperrectangle{Float64, Vector{Float64}, Vector{Float64}}
-end
-
-function stability_region(S::AbstractContinuousSystem, xs::AbstractVector, G::LazySet)
-    # default algorithm
-    alg = Static2D()
-    return stability_region(S, xs, G, alg)
 end
 
 function stability_region(S::AbstractContinuousSystem, xs::AbstractVector, G::LazySet, alg::Static2D)
