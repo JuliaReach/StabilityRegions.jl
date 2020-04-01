@@ -5,9 +5,6 @@ Inverted Van der Pol model from [EHA17].
         *Estimating the region of attraction via forward reachable sets.*
         2017 American Control Conference (ACC). IEEE, 2017.
 =#
-
-using Reachability, MathematicalSystems, TaylorIntegration, Plots
-
 @taylorize function vanderpol!(dx, x, params, t)
     dx[1] = -x[2]
     dx[2] = -x[2]*(1-x[1]^2) + x[1]

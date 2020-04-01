@@ -1,9 +1,14 @@
 module StabilityRegions
 
-using Reexport
-@reexport using LazySets, MathematicalSystems, Reachability
+using Reexport, Parameters
+@reexport using ReachabilityAnalysis
+
+abstract type AbstractAlgorithm end
 
 include("utils.jl")
-include("algorithm.jl")
+include("static.jl")
+
+export Static2D,
+       stability_region
 
 end # module
